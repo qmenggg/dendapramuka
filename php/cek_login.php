@@ -2,30 +2,31 @@
 session_start();
 include "koneksi.php";
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $username = trim($_POST['username']);
+    $password = $_POST['password'];
 
-$q = mysqli_query($db, "SELECT * FROM user WHERE username='$username'");
-$d = mysqli_fetch_assoc($q);
+    $stmt = mysqli_prepare($db, "SELECT password, role FROM user WHERE username=?");
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
 
-if (!$d) {
-    echo "User tidak ditemukan!";
-    exit;
-}
-
-// cek password (pakai password_hash seharusnya)
-if (password_verify($password, $d['password'])) {
-    $_SESSION['username'] = $d['username'];
-    $_SESSION['role'] = $d['role'];
-
-    if ($d['role'] == 'admin') {
-        header("Location: /home.php");
-        exit;
+    if ($row = mysqli_fetch_assoc($result)) {
+        // pakai password_verify
+        if (password_verify($password, $row['password'])) {
+            $_SESSION['username'] = $username;
+            $_SESSION['role'] = $row['role'];
+            header("Location: home.php");
+            exit;
+        } else {
+            $_SESSION['error'] = "Password salah!";
+            header("Location: login.php");
+            exit;
+        }
     } else {
-        header("Location: viewer/home.php");
+        $_SESSION['error'] = "Username tidak ditemukan!";
+        header("Location: login.php");
         exit;
     }
-} else {
-    echo "Password salah!";
 }
 ?>

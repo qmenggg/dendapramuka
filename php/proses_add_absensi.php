@@ -1,5 +1,12 @@
 <?php
 include "koneksi.php";
+include "session.php"; // ambil session, mulai session_start() cuma sekali di sini
+
+// Batasi akses hanya untuk admin
+if ($role != 'admin') {
+    header("Location: home.php");
+    exit;
+}
 
 $tanggal = $_POST['tanggal'];
 

@@ -1,9 +1,12 @@
-<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+<?php
+include "session.php";
+?>
+<!-- sidebar.php -->
+<aside id="layout-menu" class="layout-menu menu-vertical menu">
   <div class="app-brand demo">
-    <a href="" class="app-brand-link">
-      <!-- <img src="assets/img/.0jpg" alt="" width="30px"> -->
-      <img src="../assets/img/avatars/logo.jpg" alt class="w-px-40 h-auto" />
-      <span class="app-brand-text demo menu-text fw-bolder ms-2">Scout Tax</span>
+    <a href="home.php" class="app-brand-link">
+      <img src="../assets/img/avatars/logo.jpg" alt="Logo" class="logo-blue" />
+      <span class="app-brand-text menu-text fw-bolder ms-2">Scout Tax</span>
     </a>
     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
       <i class="bx bx-chevron-left bx-sm align-middle"></i>
@@ -11,6 +14,7 @@
   </div>
 
   <div class="menu-inner-shadow"></div>
+
   <ul class="menu-inner py-1">
     <!-- Dashboard -->
     <li class="menu-item active">
@@ -29,12 +33,14 @@
         <div data-i18n="Basic">Anggota</div>
       </a>
     </li>
-    <li class="menu-item">
-      <a href="absensi.php" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-collection"></i>
-        <div data-i18n="Basic">Absensi</div>
-      </a>
-    </li>
+    <?php if ($role == 'admin'): ?>
+      <li class="menu-item">
+        <a href="absensi.php" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-collection"></i>
+          <div data-i18n="Basic">Absensi</div>
+        </a>
+      </li>
+    <?php endif; ?>
     <li class="menu-item">
       <a href="rekap.php" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
@@ -47,50 +53,110 @@
         <div data-i18n="Basic">Denda</div>
       </a>
     </li>
-    <!-- <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Account Settings">Account Settings</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Account</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-account-settings-notifications.html" class="menu-link">
-                    <div data-i18n="Notifications">Notifications</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-account-settings-connections.html" class="menu-link">
-                    <div data-i18n="Connections">Connections</div>
-                  </a>
-                </li>
-              </ul>
-            </li> -->
-    <li class="menu-item">
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-        <div data-i18n="Authentications">Authentications</div>
-      </a>
-      <ul class="menu-sub">
-        <li class="menu-item">
-          <a href="auth-login-basic.html" class="menu-link" target="_blank">
-            <div data-i18n="Basic">Login</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="auth-register-basic.html" class="menu-link" target="_blank">
-            <div data-i18n="Basic">Register</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-            <div data-i18n="Basic">Forgot Password</div>
-          </a>
-        </li>
-      </ul>
-    </li>
+  </ul>
 </aside>
+
+<style>
+  /* Sidebar Dark Soft Theme */
+  #layout-menu {
+    width: 250px;
+    background-color: #313647;
+    /* warna utama sidebar */
+    color: #E0E0E0;
+    /* teks abu terang */
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  /* Brand */
+  #layout-menu .app-brand-link {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  #layout-menu .app-brand-text {
+    color: #FFFFFF;
+    /* teks brand putih */
+    font-weight: bold;
+  }
+
+  /* Logo bundar dengan border soft biru */
+  .logo-blue {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #64B5F6;
+    /* aksen biru muda */
+  }
+
+  /* Menu Items */
+  #layout-menu .menu-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: #E0E0E0;
+    /* teks abu terang */
+    transition: all 0.3s ease;
+  }
+
+  #layout-menu .menu-link:hover {
+    background-color: #3D4255;
+    /* hover lebih terang */
+    transform: translateX(5px);
+  }
+
+  /* Active menu */
+  #layout-menu .menu-item.active .menu-link {
+    background-color: #3D4255;
+    /* active lebih terang dari bg utama */
+    border-left: 4px solid #64B5F6;
+    /* aksen biru muda */
+  }
+
+  /* Menu Icons */
+  #layout-menu .menu-icon {
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+    color: #E0E0E0;
+    transition: color 0.3s;
+  }
+
+  #layout-menu .menu-link:hover .menu-icon {
+    color: #64B5F6;
+    /* aksen biru muda */
+  }
+
+  /* Menu Sub-items */
+  #layout-menu .menu-sub {
+    background-color: rgba(255, 255, 255, 0.05);
+    /* sedikit lebih terang */
+    padding-left: 0;
+  }
+
+  #layout-menu .menu-sub .menu-link {
+    padding-left: 2.5rem;
+    font-size: 0.95rem;
+    color: #B0B0C0;
+    /* sub-item lebih soft */
+  }
+
+  #layout-menu .menu-sub .menu-link:hover {
+    background-color: rgba(100, 181, 246, 0.15);
+    /* hover biru lembut */
+    color: #64B5F6;
+  }
+
+  /* Menu Header */
+  #layout-menu .menu-header-text {
+    color: #A0A0B0;
+    /* teks header soft abu */
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+
+  /* Scroll shadow */
+  #layout-menu .menu-inner-shadow {
+    box-shadow: inset 0 -4px 6px rgba(0, 0, 0, 0.2);
+  }
+</style>

@@ -1,5 +1,14 @@
 <?php
 include "navbar.php";
+include "session.php";
+
+// Hanya admin yang boleh akses
+if($role != 'admin'){
+    // Bisa redirect ke home atau halaman error
+    header("Location: home.php");
+    exit;
+}
+
 ?>
 
 <!-- / Navbar -->

@@ -48,7 +48,21 @@
     $(document).ready(function () {
         $('#example').DataTable();
     });
+
+
 </script>
+
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable({
+            destroy: true,
+            paging: false,
+            searching: true,
+            info: false
+        });
+    });
+</script>
+
 
 
 
