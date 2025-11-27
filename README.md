@@ -1,193 +1,195 @@
-<p align="center">
-   <a href="https://themeselection.com/products/sneat-free-bootstrap-html-admin-template/" target="_blank">
-      <img src="https://user-images.githubusercontent.com/749684/150333149-805037bc-8874-4a1f-876a-61a9683f8ef5.png" alt="sneat-logo" width="30px" height="auto">
-   </a>
-</p>
+# 🏕️ ScoutTax — Aplikasi Denda Pramuka
 
-<h1 align="center">
-   <a href="https://themeselection.com/products/sneat-free-bootstrap-html-admin-template/" target="_blank" align="center">
-      Sneat - Free Bootstrap 5 HTML Admin Template
-   </a>
-</h1>
+**ScoutTax** adalah aplikasi berbasis web untuk mencatat, mengelola, dan merekap denda Pramuka secara digital.  
+Aplikasi ini dibuat untuk menggantikan pencatatan manual yang sering tidak konsisten dan sulit direkap, terutama saat mengelola absensi ALPHA dan denda mingguan.
 
-<p align="center">Most Powerful & Comprehensive Free Bootstrap 5 HTML Admin Dashboard Template built for developers!</p>
+---
 
-![GitHub](https://img.shields.io/github/license/themeselection/sneat-html-admin-template-free) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/themeselection/sneat-html-admin-template-free) ![GitHub issues](https://img.shields.io/github/issues/themeselection/sneat-html-admin-template-free) ![GitHub closed issues](https://img.shields.io/github/issues-closed/themeselection/sneat-html-admin-template-free) ![Twitter Follow](https://img.shields.io/twitter/follow/Theme_Selection?style=social)
+## 📌 Fitur Utama
 
-[![Sneat - Bootstrap 5 HTML Admin Template Demo Screenshot](https://user-images.githubusercontent.com/80033712/153581472-452394ee-327a-4d00-a41a-c6e8036b7096.png)](https://themeselection.com/products/sneat-free-bootstrap-html-admin-template/)
+### 🔐 1. Sistem Login & Role
+- Sistem login menggunakan PHP Session
+- Role: **Admin**, **Viewer**
+- Setiap role memiliki batasan akses halaman
+- Proteksi URL langsung dengan session
 
-## Introduction 🚀
+### 👥 2. Manajemen Data Siswa
+- Tambah, edit, hapus siswa
+- Data meliputi nama, kelas, sangga, NIS
+- Dashboard siswa lengkap
 
-If you’re a developer looking for most Powerful & comprehensive [**Free Bootstrap 5 HTML Admin Template**](https://themeselection.com/products/sneat-free-bootstrap-html-admin-template/) built for developers, rich with features, and highly customizable look no further than Sneat. We’ve followed the highest industry standards to bring you the very best admin template that is not only fast and easy to use but highly scalable. Offering ultimate convenience and flexibility, you’ll be able to build whatever application you want with very little hassle.
+### 📅 3. Pencatatan Absensi & Denda
+- Input denda manual & otomatis
+- Pencatatan otomatis ALPHA → masuk ke denda
+- Perhitungan total denda per siswa
+- Riwayat denda lengkap
 
-Build premium quality applications with ease. Use our innovative [bootstrap admin templates](https://themeselection.com/products/category/bootstrap-admin-templates/) to create eye-catching, high-quality WebApps. Your apps will be completely responsive, ensuring they’ll look stunning and function flawlessly on desktops, tablets, and mobile devices.
+### 📊 4. Dashboard Interaktif
+Menggunakan
+- Grafik absensi ALPHA
+- Statistik denda siswa
+- Monitoring mingguan & bulanan
 
-[View Demo](https://themeselection.com/demo/sneat-bootstrap-html-admin-template-free/html/)
+### 🧾 5. Rekap & Export PDF
+- Rekap harian
+- Rekap bulanan
+- Export PDF menggunakan **mPDF**
+- Layout rapih & siap cetak
 
-## Installation ⚒️
+### 🗄️ 6. Database MySQL
+- Struktur tabel rapi (users, siswa, absensi, denda)
+- Relasi sesuai kebutuhan operasional
 
-Automate time-consuming or repetitive tasks in your development workflow using Gulp 🥤
+---
 
-> Please note, the use of Node, Webpack & Gulp and their advanced settings are totally optional. You can use and customize the template without using them too.
+## 🛠️ Teknologi yang Digunakan
 
-Installing Node & Gulp and running it is super easy in Sneat, please follow these steps and you should be ready to rock 🤘
+| Teknologi | Fungsi |
+|----------|--------|
+| **PHP 8+** | Backend, autentikasi, business logic |
+| **MySQL** | Database utama |
+| **Bootstrap 5** | Tampilan admin panel |
+| **Chart.js** | Visualisasi grafik |
+| **mPDF** | Export PDF |
+| **FontAwesome** | Ikon |
+| **Composer** | Library management |
+| **Git & GitHub** | Version Control |
 
-1. First of all, make sure you have installed [Node](https://nodejs.org/en/) (LTS). If Node.js is already installed in your system, make sure the installed version is `LTS` and jump to step 2
+---
 
-2. Install the Gulp CLI: Open Terminal/Command Prompt and run the following command and wait until it finishes. If you have already installed Gulp CLI, you can skip this step and jump to step 3.
+## 📂 Struktur Folder Project
 
-```bash
-npm install --global gulp-cli
-```
+/assets
+/css
+/js
+/img
 
-3. Navigate to the Sneat root directory and run following command to install our local dependencies listed in `package.json`. You can use `npm` OR `yarn` as per your preference.
+/auth
+login.php
+logout.php
 
-> It is recommended to use Yarn
+/includes
+koneksi.php
+navbar.php
+sidebar.php
+session.php
 
-```bash
-# For npm
-npm install --legacy-peer-deps
+/pages
+absensi.php
+denda.php
+siswa.php
+rekap.php
+dashboard.php
 
-# For Yarn
-yarn
-```
+/database
+dendapramuka.sql
 
-4. Now, you are ready to run `npm` tasks, below command will start the server and watch the code using [browsersync](https://browsersync.io/). Open [http://localhost:3000/](http://localhost:3000/) to check your development 🚀.
+/vendor
+(folder composer untuk mPDF, autoload)
 
-```bash
-# npm
-npm run serve
+yaml
+Salin kode
 
-# yarn
-yarn serve
-```
+---
 
-## Available Tasks 🧑‍💻
+## ⚙️ Instalasi & Setup
 
-Open console/terminal, go to the Sneat root directory and run `npm run {task_name}`.i.e To generate build run `npm run build`.
+### 1️⃣ Clone repository
 
-Run a task with specified environment(development/production) just execute the task with `--env={environment}` option, i.e. `npm run build --env=production`.
+```sh
+git clone https://github.com/iiqbaael/dendapramuka.git
+2️⃣ Pindahkan ke folder server lokal
+swift
+Salin kode
+C:/xampp/htdocs/dendapramuka/
+3️⃣ Import database
+Import file SQL:
 
-> **Tip:** Use `npm run` command to list all predefined npm tasks from `package.json` file.
+pgsql
+Salin kode
+database/dendapramuka.sql
+Melalui:
 
-## What's Included 📦
+arduino
+Salin kode
+http://localhost/phpmyadmin
+4️⃣ Konfigurasi koneksi database
+Edit file:
 
-- Dashboard
-- Layouts
-  - Without menu
-  - Without Navbar
-  - Container
-  - Fluid
-  - Blank
-- Pages
-  - Account Settings
-  - Login
-  - Register
-  - Forgot Password
-  - Error
-  - Under Maintenance
-- Cards
-- User Interface
-  - **All Bootstrap Components**
-- Extended UI
-  - Perfect Scrollbar
-  - Text Divider
-- Boxicon
-- Form Elements
-  - Basic Inputs
-  - Input Groups
-- Form Layout
-  - Vertical Form
-  - Horizontal Form
-- Tables
+bash
+Salin kode
+includes/koneksi.php
+Isi:
 
-## What's in Premium Version 💎
+php
+Salin kode
+<?php
+$db = mysqli_connect("localhost", "root", "", "dendapramuka");
+if (!$db) {
+    die("Koneksi gagal: " . mysqli_connect_error());
+}
+?>
+5️⃣ Jalankan aplikasi
+Akses melalui browser:
 
-| Sneat Free Version                                                                        | Sneat Premium Version                                                                                                            |
-| ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| [Demo](https://themeselection.com/demo/sneat-bootstrap-html-admin-template-free/html/)    | [Demo](https://themeselection.com/demo/sneat-bootstrap-html-admin-template/html/vertical-menu-template/)                         |
-| [Download](https://themeselection.com/products/sneat-free-bootstrap-html-admin-template/) | [Purchase](https://themeselection.com/products/sneat-bootstrap-html-admin-template/)                                             |
-| Single vertical Menu                                                                      | Vertical Menu + Horizontal Menu                                                                                                  |
-| Simple Light Style                                                                        | Light & Dark Style                                                                                                               |
-| Default Theme                                                                             | Default, Semi Dark & Bordered Themes                                                                                             |
-| Fixed Layout(Menu)                                                                        | Fixed & Static Layout(Menu)                                                                                                      |
-| 1 Simple Dashboard                                                                        | 3 Niche Dashboards                                                                                                               |
-| -                                                                                         | Multiple Ready to use Application like Calendar, Invoice, Users List, Users View, Roles and Permission etc.                      |
-| Simple From Elements                                                                      | Advance form elements, validation & form wizard                                                                                  |
-| Basic Cards                                                                               | Basic, Advance , Statistics, Analytics, Gamifications and Actions Cards                                                          |
-| Basic User Interface(Components)                                                          | Advance and Custom User Interfaces(Components)                                                                                   |
-| Two Extended Components                                                                   | Twelve Ready to use Extended Components                                                                                          |
-| -                                                                                         | Quick Search - Quickly navigate between pages (w/ hotkey support)                                                                |
-| Basic Pages                                                                               | Authentication Pages in 2 Variants + Ready to use pages like User Profile, Account Settings,FAQ, Help Center, Pricing, Misc etc. |
-| -                                                                                         | 3D Characters + Illustrations                                                                                                    |
-| Basic tables                                                                              | Advanced tables                                                                                                                  |
-| -                                                                                         | Quick customization using theme config file                                                                                      |
-| -                                                                                         | Leaflet Maps                                                                                                                     |
-| 1 Chart Library                                                                           | 2 Chart Libraries                                                                                                                |
-| -                                                                                         | Multiple Navbar & Menu Options                                                                                                   |
-| -                                                                                         | Starter-kit                                                                                                                      |
-| -                                                                                         | Internationalization support                                                                                                     |
-| -                                                                                         | RTL Support                                                                                                                      |
-| Regular Support                                                                           | Priority Support                                                                                                                 |
-| Detailed Documentation                                                                    | Detailed Documentation                                                                                                           |
+arduino
+Salin kode
+http://localhost/dendapramuka
+🔑 Akun Default
+pgsql
+Salin kode
+Username : iqbal
+Password : 123
+Role     : admin
+Disarankan mengganti password melalui database.
 
-## Documentation 📜
 
-Check out our live [Documentation](https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/)
+Contoh:
 
-## Browser Support 🖥️
+Dashboard
 
-At present, we officially aim to support the last two versions of the following browsers:
+Halaman denda
 
-- Chrome (latest)
-- FireFox (latest)
-- Safari (latest)
-- Microsoft Edge (latest)
-- Opera (latest)
+Rekap PDF
 
-## Useful Links 🎁
+Login screen
 
-- [Freebies](https://themeselection.com/products/category/download-free-admin-templates/)
-- [Download Free Admin Templates](https://themeselection.com/products/category/download-free-admin-templates/)
-- [Bootstrap 5 CheatSheet](https://bootstrap-cheatsheet.themeselection.com/)
+🤝 Kontribusi
+Kontribusi sangat terbuka untuk:
 
-## Support 👨‍💻
+Penambahan fitur laporan mingguan
 
-We use GitHub issues as support tickets to manage Item support.
+Auto-Reminder pembayaran denda
 
-1. In order to raise the GitHub issue, you must have a github account. [Raise a Issue](https://github.com/themeselection/sneat-html-admin-template-free/issues)
+Mode Gelap / Terang
 
-## License ©
+Export Excel
 
-- Copyright © [ThemeSelection](https://themeselection.com/)
-- Licensed under [MIT](https://github.com/themeselection/sneat-html-admin-template-free/blob/master/LICENSE.md)
+Cara kontribusi:
 
-## Contributing 🦸
+Fork repository
 
-Contribution are always welcome and recommended! Here is how:
+Buat branch baru
 
-- Fork the repository ([here is the guide](https://docs.github.com/en/get-started/quickstart/fork-a-repo)).
-- Clone to your machine `git clone https://github.com/YOUR_USERNAME/REPO_URL` Make your changes
-- Create a pull request
+css
+Salin kode
+git checkout -b fitur-baru
+Commit perubahan
 
-### Contribution Requirements 🧰
+sql
+Salin kode
+git commit -m "Tambah fitur X"
+Push branch
 
-- When you contribute, you agree to give a non-exclusive license to ThemeSelection to use that contribution in any context as we (ThemeSelection) see appropriate.
-- If you use content provided by another party, it must be appropriately licensed using an open source license.
-- Contributions are only accepted through Github pull requests.
-- Finally, contributed code must work in all supported browsers.
+perl
+Salin kode
+git push origin fitur-baru
+Buat Pull Request
 
-## Creators 😇
+📜 Lisensi
+Project ini bersifat Open Source dan boleh digunakan untuk keperluan pembelajaran, sekolah, dan pengembangan internal.
 
-- [ThemeSelection](https://themeselection.com)
-
-## Changelog 📆
-
-Please refer to the [CHANGELOG](https://themeselection.com/demo/sneat-bootstrap-html-admin-template-free/changelog.html) file. We will add a detailed release notes to each new release.
-
-## Social Media 🌍
-
-- Twitter : [https://twitter.com/Theme_Selection](https://twitter.com/Theme_Selection)
-- Facebook : [https://www.facebook.com/ThemeSelections/](https://www.facebook.com/ThemeSelections/)
-- Pinterest : [https://pinterest.com/themeselect/](https://pinterest.com/themeselect/)
-- Instagram : [https://www.instagram.com/themeselection/](https://www.instagram.com/themeselection/)
+👤 Author
+Iqbal
+SMK — PPLG
+GitHub: https://github.com/iiqbaael
