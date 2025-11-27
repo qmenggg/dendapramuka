@@ -189,6 +189,145 @@ Buat Pull Request
 📜 Lisensi
 Project ini bersifat Open Source dan boleh digunakan untuk keperluan pembelajaran, sekolah, dan pengembangan internal.
 
+🖥️ CARA AMBIL PROJECT DARI GITHUB KE LAPTOP LAIN
+1️⃣ Pastikan Git sudah ter-install
+
+Cek dulu:
+
+git --version
+
+
+Kalau belum ada, install Git for Windows.
+
+2️⃣ Clone project kamu
+
+Masuk folder manapun yang kamu mau (contoh: C:\xampp\htdocs)
+
+Lalu jalankan:
+
+git clone https://github.com/iiqbaael/dendapramuka.git
+
+
+Ini akan membuat folder:
+
+dendapramuka/
+
+3️⃣ Masuk ke folder project
+cd dendapramuka
+
+4️⃣ Cek branch apa saja yang ada
+git branch -a
+
+
+Output akan muncul:
+
+main
+remotes/origin/main
+remotes/origin/feature/xxx
+remotes/origin/dev
+
+5️⃣ Pindah ke branch yang kamu mau kerja
+
+Kalau mau ke main:
+
+git checkout main
+
+
+Kalau mau kerja di branch dev:
+
+git checkout dev
+
+
+Kalau mau ambil branch fitur:
+
+git checkout feature/nama-branch
+
+6️⃣ Kalau mau coding → Buat BRANCH BARU
+
+Biar aman dan ga ngerusak project.
+
+git checkout -b feature/nama-fitur-baru
+
+7️⃣ Kalau sudah selesai coding → Push lagi
+git add .
+git commit -m "pesan perubahan"
+git push -u origin feature/nama-fitur-baru
+
+✅ LANGKAH NYAMBUNGIN DATABASE DI LAPTOP BARU
+1️⃣ Buka XAMPP → Start MySQL
+
+Pastikan:
+
+Apache ✔️
+
+MySQL ✔️
+
+2️⃣ Buka phpMyAdmin
+
+Akses:
+
+http://localhost/phpmyadmin/
+
+3️⃣ Buat database baru
+
+Klik New → buat database dengan nama yang sama seperti di koneksi.php.
+
+Misal di project kamu file koneksi.php isinya:
+
+$db = mysqli_connect("localhost", "root", "", "dendapramuka");
+
+
+Berarti kamu harus buat database:
+
+➡️ dendapramuka
+
+Setelah buat → klik database itu.
+
+4️⃣ Import file SQL
+
+Cari file database kamu di:
+
+dendapramuka/db/namafile.sql
+
+
+Langkah:
+
+Klik database yang barusan dibuat
+
+Klik tab Import
+
+Klik Choose File
+
+Pilih file SQL (misal dendapramuka/db/dendapramuka.sql)
+
+Klik Go
+
+Kalau berhasil → tabel-tabel langsung muncul.
+
+5️⃣ Pastikan koneksi.php sesuai laptop baru
+
+Biasanya tetap sama:
+
+$db = mysqli_connect("localhost", "root", "", "dendapramuka");
+
+
+Kalau temanmu pakai password MySQL (jarang), ubah:
+
+$db = mysqli_connect("localhost", "root", "password_mysql", "dendapramuka");
+
+6️⃣ Jalankan project
+
+Taruh folder project di:
+
+C:\xampp\htdocs\dendapramuka
+
+
+Lalu buka:
+
+http://localhost/dendapramuka/home.php
+
+🎉 Beres!
+
 👤 Author
 Iqbal
 SMK — PPLG
