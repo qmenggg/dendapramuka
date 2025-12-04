@@ -31,7 +31,7 @@ $current = basename($_SERVER['PHP_SELF']);
 
     <li class="menu-item <?= $current == 'anggota.php' ? 'active' : '' ?>">
       <a href="anggota.php" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-collection"></i>
+        <i class="menu-icon tf-icons bx bx-user"></i>
         <div data-i18n="Basic">Anggota</div>
       </a>
     </li>
@@ -39,7 +39,7 @@ $current = basename($_SERVER['PHP_SELF']);
     <?php if ($role == 'admin'): ?>
       <li class="menu-item <?= $current == 'absensi.php' ? 'active' : '' ?>">
         <a href="absensi.php" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-collection"></i>
+        <i class='menu-icon tf-icons bx  bx-calendar'></i>
           <div data-i18n="Basic">Absensi</div>
         </a>
       </li>
@@ -47,14 +47,14 @@ $current = basename($_SERVER['PHP_SELF']);
 
     <li class="menu-item <?= $current == 'rekap.php' ? 'active' : '' ?>">
       <a href="rekap.php" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-collection"></i>
+        <i class="menu-icon tf-icons bx bx-file"></i>
         <div data-i18n="Basic">Rekap</div>
       </a>
     </li>
 
     <li class="menu-item <?= $current == 'denda.php' ? 'active' : '' ?>">
       <a href="denda.php" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-collection"></i>
+        <i class="menu-icon tf-icons bx bx-wallet"></i>
         <div data-i18n="Basic">Denda</div>
       </a>
     </li>
