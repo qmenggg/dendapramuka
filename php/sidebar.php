@@ -1,5 +1,6 @@
 <?php
 include "session.php";
+$current = basename($_SERVER['PHP_SELF']);
 ?>
 
 <!-- sidebar.php -->
@@ -17,8 +18,7 @@ include "session.php";
   <div class="menu-inner-shadow"></div>
 
   <ul class="menu-inner py-1">
-    <!-- Dashboard -->
-    <li class="menu-item active">
+    <li class="menu-item <?= $current == 'home.php' ? 'active' : '' ?>">
       <a href="home.php" class="menu-link">
         <i class="menu-icon tf-icons bx bx-home-circle"></i>
         <div data-i18n="Analytics">Dashboard</div>
@@ -28,27 +28,31 @@ include "session.php";
     <li class="menu-header small text-uppercase">
       <span class="menu-header-text">Pages</span>
     </li>
-    <li class="menu-item">
+
+    <li class="menu-item <?= $current == 'anggota.php' ? 'active' : '' ?>">
       <a href="anggota.php" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div data-i18n="Basic">Anggota</div>
       </a>
     </li>
+
     <?php if ($role == 'admin'): ?>
-      <li class="menu-item">
+      <li class="menu-item <?= $current == 'absensi.php' ? 'active' : '' ?>">
         <a href="absensi.php" class="menu-link">
           <i class="menu-icon tf-icons bx bx-collection"></i>
           <div data-i18n="Basic">Absensi</div>
         </a>
       </li>
     <?php endif; ?>
-    <li class="menu-item">
+
+    <li class="menu-item <?= $current == 'rekap.php' ? 'active' : '' ?>">
       <a href="rekap.php" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div data-i18n="Basic">Rekap</div>
       </a>
     </li>
-    <li class="menu-item">
+
+    <li class="menu-item <?= $current == 'denda.php' ? 'active' : '' ?>">
       <a href="denda.php" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div data-i18n="Basic">Denda</div>
