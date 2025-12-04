@@ -1,5 +1,5 @@
 <?php
-    $db=mysqli_connect("localhost","root","","denda_db");
+    $db=mysqli_connect("localhost","root","","dev_denda");
 
 
     // if($db){

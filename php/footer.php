@@ -43,6 +43,9 @@
 <!-- DataTables JS -->
 <script src="https://cdn.datatables.net/2.3.5/js/dataTables.min.js"></script>
 
+
+
+
 <!-- Inisialisasi DataTables -->
 <script>
     $(document).ready(function () {
@@ -68,10 +71,6 @@
 
 
 <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
-
-<!-- Main JS -->
-<script src="../assets/js/main.js"></script>
-
 <!-- Page JS -->
 <script src="../assets/js/dashboards-analytics.js"></script>
 

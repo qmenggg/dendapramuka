@@ -1,12 +1,13 @@
 <?php
 include "session.php";
 ?>
+
 <!-- sidebar.php -->
 <aside id="layout-menu" class="layout-menu menu-vertical menu">
   <div class="app-brand demo">
     <a href="home.php" class="app-brand-link">
       <img src="../assets/img/avatars/logo.jpg" alt="Logo" class="logo-blue" />
-      <span class="app-brand-text menu-text fw-bolder ms-2">Scout Tax</span>
+      <span class="app-brand-text menu-text fw-bolder ms-2">ScoutTax</span>
     </a>
     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
       <i class="bx bx-chevron-left bx-sm align-middle"></i>

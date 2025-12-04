@@ -9,7 +9,7 @@ session_start();
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login - ScoutTax</title>
-  <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="../assets/img/avatars/logo.jpg" />
   <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
   <link rel="stylesheet" href="../assets/vendor/css/core.css" />
   <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" />
@@ -41,8 +41,6 @@ session_start();
               </a>
             </div>
             <h4 class="mb-2">Welcome to ScoutTax</h4>
-            <p class="mb-4">Please sign-in to your account</p>
-
             <!-- Error message -->
             <?php
             if (isset($_SESSION['error'])) {
@@ -62,7 +60,7 @@ session_start();
               <div class="mb-3 form-password-toggle">
                 <div class="d-flex justify-content-between">
                   <label class="form-label" for="password">Password</label>
-                  <a href="auth-forgot-password-basic.html"><small>Forgot Password?</small></a>
+                  <a href="#"><small>Forgot Password?</small></a>
                 </div>
                 <div class="input-group input-group-merge">
                   <input type="password" id="password" class="form-control" name="password"
@@ -71,12 +69,12 @@ session_start();
                 </div>
               </div>
 
-              <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+              <button class="btn btn-primary d-grid w-100" type="submit">Login</button>
             </form>
 
             <p class="text-center mt-3">
               <span>New on our platform?</span>
-              <a href="register.php"><span>Create an account</span></a>
+              <a href="#"><span>Create an account</span></a>
             </p>
           </div>
         </div>

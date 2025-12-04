@@ -1,6 +1,7 @@
 <?php
 include "navbar.php";
 include "koneksi.php";
+include "session.php";
 
 // ===============================
 // AMBIL MASTER DENDA BERTINGKAT
@@ -149,14 +150,22 @@ $sisa_kumpul = $total_denda_keseluruhan - $total_terkumpul;
                                     <span class="badge bg-danger">BELUM</span>
                                 <?php endif; ?>
                             </td>
-
                             <td class="text-center">
-                                <?php if ($kurang > 0): ?>
-                                    <a href="bayar_denda.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-success">
-                                        <i class="bx bx-money"></i> Bayar
-                                    </a>
+                                <?php if ($role == 'admin'): ?>
+                                    <?php if ($kurang > 0): ?>
+                                        <a href="bayar_denda.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-success">
+                                            <i class="bx bx-money"></i> Bayar
+                                        </a>
+                                    <?php else: ?>
+                                        <a href="bayar_denda.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-success">
+                                            <i class="bx bx-money"></i> Detail
+                                        </a>
+                                    <?php endif; ?>
                                 <?php else: ?>
-                                    <span class="text-muted">-</span>
+                                    <a href="bayar_denda.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-success">
+                                        <i class="bx bx-money"></i> Detail
+                                    </a>
+                                    <!-- <span class="text-muted">-</span> -->
                                 <?php endif; ?>
                             </td>
                         </tr>

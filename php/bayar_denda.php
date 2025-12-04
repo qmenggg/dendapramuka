@@ -82,10 +82,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Bayar Denda</h1>
+    <h1 class="mt-4">Detail Denda</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="denda.php">Denda</a></li>
-        <li class="breadcrumb-item active">Bayar</li>
+        <li class="breadcrumb-item active">Detail</li>
     </ol>
 
     <div class="card p-3 mb-3">
