@@ -1,10 +1,11 @@
 <?php
-    $db=mysqli_connect("localhost","root","","denda_db");
+$db = mysqli_connect("localhost", "root", "", "dev_denda");
 
 
-    // if($db){
-    //     echo "Koneksi DB OK";
-    // }else{
-    //     echo "Koneksi DB Gagal";
-    // }
+// if($db){
+//     echo "Koneksi DB OK";
+// }else{
+//     echo "Koneksi DB Gagal";
+// }
 ?>
+
